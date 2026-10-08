@@ -1,0 +1,59 @@
+# Project instructions
+
+Engineering baseline: 1.0
+Project owner: <owner>
+Local deviations: <none, or short explanation>
+
+## Project facts
+
+- Purpose and observable outcomes: <brief description>
+- Operational and remote-write boundaries: <explicit policy>
+- Runtime and environment prerequisites: <versions and setup reference>
+- Safe verification commands: <command, working directory, purpose>
+- Test isolation: <datasets/services used; external effects if any>
+- Relevant boundaries and reusable components: <paths and responsibilities>
+- Critical invariants and their evidence: <rules and test/reference paths>
+- Review workflow: <existing review process and where it is documented>
+- Conditional references: <document path and when it matters>
+
+## Engineering policy
+
+1. Inspect the relevant implementation, tests, and existing helpers before
+   adding a competing path. Follow established conventions unless a
+   demonstrated requirement justifies a change.
+
+2. Establish observable success before substantive implementation.
+   Clarify ambiguity that changes correctness, compatibility, or safety.
+   Make reasonable assumptions for reversible details and state them.
+
+3. Keep the change focused. Prefer existing components and direct solutions.
+   Add abstractions, dependencies, or layers only for demonstrated needs.
+   Avoid unrelated cleanup.
+
+4. Select verification by consequences, uncertainty, affected interfaces,
+   and recoverability. Existing required checks and reviews still apply.
+   For structural changes, state acceptance criteria and affected contracts.
+   For critical changes, identify invariants, independent expected results,
+   failure scenarios, and recovery constraints.
+
+5. Use the repository's existing verification tools. Add regression evidence
+   for meaningful behavioral defects. Exercise affected integration paths.
+   Do not weaken checks or replace expected results merely to make tests pass.
+
+6. Continue authorized safe local implementation and verification without
+   repeated approval requests. Development permission does not grant access
+   to production, live financial actions, destructive data operations,
+   deployment, or remote publishing. Honor the project's actual boundaries.
+
+7. Default to one implementation agent. Delegate bounded tasks only when
+   independent analysis, expertise, context isolation, or parallel work
+   justifies the cost. The lead remains responsible for integration.
+
+8. Report what changed, what actually ran, what passed or failed, what remains
+   untested, and material residual risks. A review opinion is not a test run.
+
+9. Update documentation only when the change alters an important fact,
+   contract, invariant, or decision. Read detailed references when relevant.
+
+10. Keep instructions useful. Remove stale or redundant guidance; add rules
+    for demonstrated recurring failures or consequential constraints.

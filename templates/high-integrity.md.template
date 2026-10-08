@@ -1,0 +1,54 @@
+# High-integrity behavior
+
+Owner: <domain owner>
+Applies to: <paths, calculations, data, and external effects>
+Read before changing the behaviors identified below.
+
+This document records intended behavior and supporting evidence.
+It does not grant production access or replace executable controls.
+
+## Contracts and invariants
+
+| Behavior or invariant | Authoritative requirement/source | Verification reference | Failure response |
+| --- | --- | --- | --- |
+| <concrete rule> | <source or owner-approved example> | <test/fixture> | <observable handling> |
+
+## Applicable domain decisions
+
+Retain only relevant items; fill their actual semantics.
+
+- Units, currencies, precision, rounding stage/mode, and tolerances.
+- Missing/invalid values, overflow, tick sizes, and lot sizes.
+- Event and receipt times, exchange dates/calendars, timezones, and ordering.
+- Late, duplicate, corrected, or missing events.
+- Raw/adjusted market data, corporate actions, revisions, and lineage.
+- Authority by field and as-of time; reconciliation exception handling.
+- Account/instrument/fill identity; partial fills and durable deduplication.
+- Position and P&L conventions, FX, fees, commissions, and borrow costs.
+- Simulation/paper/live separation and point-in-time research data.
+- Order transitions, unknown outcomes, retries, disconnects, and recovery.
+- Risk enforcement with stale state and concurrent submissions.
+- Audit records for consequential decisions and effects.
+
+## Independent reference evidence
+
+- Small worked examples and origin of expected results: <references>
+- Regression inputs and reproducible versions: <references>
+- Numerical tolerance and reproducibility limits: <decision>
+- Relevant failure/restart/replay cases: <references>
+
+Implementation-generated snapshots alone are not independent evidence.
+Do not silently invent missing business semantics.
+
+## Operational boundaries and recovery
+
+- Allowed development datasets, identities, and endpoints: <values>
+- Production credentials/endpoints unavailable to development: <evidence>
+- Verified control checks and remaining gaps: <references>
+- Code rollback, data restore, or forward repair: <applicable procedure>
+- External effects that cannot be rolled back: <effects and response>
+- Release approval boundary and acceptance evidence: <requirements>
+
+If critical state is unknown, use the explicitly defined safe response.
+A timeout is not proof that an external action did not occur.
+Development tests must not place real orders or mutate live financial data.
