@@ -1,6 +1,6 @@
 # Minimal AI engineering baseline
 
-Version 1.0.
+Version 1.1.
 
 A small set of instruction templates for projects worked on by AI coding agents such as Claude Code
 and Codex. It aims to improve correctness and maintainability with minimal recurring overhead,

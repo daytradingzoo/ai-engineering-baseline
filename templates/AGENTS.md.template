@@ -1,6 +1,6 @@
 # Project instructions
 
-Engineering baseline: 1.0
+Engineering baseline: 1.1
 Project owner: <owner>
 Local deviations: <none, or short explanation>
 
@@ -28,6 +28,9 @@ Local deviations: <none, or short explanation>
 
 3. Keep the change focused. Prefer existing components and direct solutions.
    Add abstractions, dependencies, or layers only for demonstrated needs.
+   When adding another case would make a function's branching harder to
+   follow, that is a demonstrated need: restructure it first, as its own
+   change.
    Avoid unrelated cleanup.
 
 4. Select verification by consequences, uncertainty, affected interfaces,
